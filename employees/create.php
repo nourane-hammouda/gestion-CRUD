@@ -6,31 +6,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $team = $_POST['team'];
 
+    // Préparer et exécuter la requête d'insertion dans la base de données
     $stmt = $conn->prepare("INSERT INTO employees (name, email, team) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $name, $email, $team);
     $stmt->execute();
     $stmt->close();
 
+    // Redirection vers la page d'index des employés après ajout
     header("Location: index.php");
+    exit;
 }
+
+// Inclure le formulaire HTML pour l'ajout d'un employé
+include 'employees.html';
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Ajouter un employé</title>
-</head>
-<body>
-    <h2>Ajouter un employé</h2>
-    <form method="POST">
-        <label>Nom:</label>
-        <input type="text" name="name" required>
-        <label>Email:</label>
-        <input type="email" name="email" required>
-        <label>Équipe:</label>
-        <input type="text" name="team">
-        <button type="submit">Ajouter</button>
-    </form>
-    <a href="index.php">Retour</a>
-</body>
-</html>
