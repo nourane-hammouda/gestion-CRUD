@@ -4,6 +4,7 @@ USE Projet_Manager;
 CREATE TABLE authentication (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     role ENUM('admin', 'employee') NOT NULL
 );
