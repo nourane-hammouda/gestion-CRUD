@@ -28,23 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Nom d'utilisateur introuvable.";
     }
 }
+
+// Inclure le fichier HTML du formulaire de connexion
+include 'formulaire_connexion.html';
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Connexion</title>
-</head>
-<body>
-    <h2>Connexion</h2>
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="POST">
-        <label>Nom d'utilisateur:</label>
-        <input type="text" name="username" required>
-        <label>Mot de passe:</label>
-        <input type="password" name="password" required>
-        <button type="submit">Se connecter</button>
-    </form>
-    <a href="register.php">Pas encore inscrit ? Inscrivez-vous</a>
-</body>
-</html>
