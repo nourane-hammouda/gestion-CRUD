@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Bord</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Tableau de Bord</h1>
+        
+        <!-- Tableau pour afficher les sections -->
+        <table class="dashboard-table" border="1">
+            <thead>
+                <tr>
+                    <th>Section</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="projects/list.php">Projets</a></td>
+                    <td>Liste de tous les projets.</td>
+                </tr>
+                <tr>
+                    <td><a href="employees/list.php">Employés</a></td>
+                    <td>Liste de tous les employés.</td>
+                </tr>
+                <tr>
+                    <td><a href="tasks/list.php">Tâches</a></td>
+                    <td>Liste de toutes les tâches.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Tableau pour ajouter une nouvelle équipe -->
+        <h2>Ajouter une Équipe</h2>
+        <table border="1">
+            <tr>
+                <th>Équipe</th>
+                <th>Membres</th>
+                <th>Description</th>
+                <th>Tâches</th>
+                <th>État</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="equipe"></td>
+                <td><input type="text" name="membres"></td>
+                <td><input type="text" name="description"></td>
+                <td><input type="text" name="taches"></td>
+                <td><input type="color" name="etat"></td>
+            </tr>
+        </table>
+        
+        <a href="../../public/logout.php">Déconnexion</a>
+    </div>
+</body>
+</html>
