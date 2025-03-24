@@ -1,0 +1,108 @@
+*{
+    margin:2%;
+}
+
+h2,h3{
+    text-align:center ;
+}
+body {
+    background-color: rgb(208, 225, 212);
+}
+
+
+nav {
+    width: 250 px;
+    position:relative;
+    background-color:rgb(222, 226, 255);
+    overflow-x: hidden;
+    transition: 0.3s;
+    top:0;
+    padding-top:20px;
+    box-shadow:0px 2px 1px;
+    left: -290px;
+    display: inline;
+}
+
+
+nav ul{
+    list-style: none;
+    transition: 0.3s;
+    position:relative;
+    max-height: 450%;
+    left:20px;
+}
+
+.fermer{
+    width:0 ;
+    font-size:20px;
+    padding:0%;
+    cursor:pointer;
+    background:none;
+    overflow-x:hidden;
+    transition: 0.3s;
+
+}
+
+.ouv{
+    width: 50px;
+    font-size: 20px;
+    cursor:pointer;
+    border: none;
+    color: black;
+    padding: 10px;
+    display: flex;
+}
+
+.cadre{
+    width: 500px;
+    text-align: center ;
+    font-size: large;
+    border-style:solid;
+    border-radius: 5%;
+    border-color: rgb(80, 118, 92);
+    background-color: efd3d7;
+    box-shadow: 2px 3px 6px;
+    border-width: 0.1cm;
+}
+
+.cadre .ins button{
+    background-color:rgb(71, 101, 84);
+    border-radius: 15%;
+    border-style: solid;
+    font-size: large;
+    font-weight: 100;
+    cursor:pointer;
+}
+
+.cadre .co button{
+    background-color:rgb(83, 105, 84);
+    border-radius: 15%;
+    border-style: solid;
+    font-size: large;
+    font-weight: 100;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:azure;
+
+}
+
+.f table {
+    border:0cm;
+    border-radius: 10% 10% 10% 10%;
+}
+
+.f table tr td{
+    border-radius: 10% 5% 10% 5%;
+}
+.f table tr td input{
+    height: 70px;;
+    width: 200px;
+    border-radius: 10%;
+    border-color: aliceblue;
+}
+
+
+
+

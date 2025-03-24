@@ -2,17 +2,39 @@
 <html>
     <head>
         <meta charset-8>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <h1> Se connecter </h1>
-        <form id="form">
+        <a onclick="ouvrir()" class="ouv">&#9776;menu</a>
+        <nav id="nav">
+            <ul>
+                <li><a href="Creer_nv_projet.html">Accueil</a></li>
+                <li><a href="javascript:void(0)" onclick="fermer()" class="fermer">&times;</a></li> <!--javascrip:void(0) permet de ne pas avoir un rechargement de page, et &.. c'est x pour fermerla page web -->
+                <li><a href="#">Mon Profil</a></li>                    
+                <li><a href="tableau_de_bord.html">Creer un tableau de bord</a></li>
+                <li><a href="tableau_de_bord.html">Mes tableaux de bord</a></li>
+                <li><a href="#">equipes</a></li>
+            </ul>
+        </nav>
+        <form id="fc" method="POST">
             <label for="email">email</label>
             <input type=email name=email placeholder="abcd@gmail.com">
             <label for="password" name="mot de passe">mot de passe</label>
             <input type="password" name="mot de passe">
-            <input type="submit">
+            <a href="tableau_de_bord.html">
+                <button type="qubmit">Se connecter</button>
+            </a>
         </form>
-        
+        <p>Pas en core inscrit ? <a href="formulaire_inscription.html">inscrivez vous ici !</a></p>
+        <script>
+            function ouvrir(){
+                document.getElementById("nav").style.left = "0px";
+            }
+            function fermer(){
+                document.getElementById("nav").style.left = "-280px";
+            }
+        </script>
     </body>
 </html>

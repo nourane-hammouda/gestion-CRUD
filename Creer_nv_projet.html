@@ -2,24 +2,98 @@
 <html>
     <head>
         <meta charset="utf-8" lang="fr">
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <table border="1">
-            <tr>
-                <th> Equipe </th>
-                <th> Membres </th>
-                <th> Description </th>
-                <th> Taches </th>
-                <th> Etat </th>
-            </tr>
-            <tr>
-                <td><input type=text name=equipe></td>
-                <td><input type=text name=Membres></td>
-                <td><input type=text name=Descritption></td>
-                <td><input type=text name=Taches></td>
-                <td><input type=color name=Etat></td>
-            </tr>
-        </table>
+
+        <a onclick="ouvrir()" class="ouv">&#9776;menu</a>
+        <nav id="nav">
+            <ul>
+                <li><a href="Creer_nv_projet.html">Accueil</a></li>
+                <li><a href="javascript:void(0)" onclick="fermer()" class="fermer">&times;</a></li> <!--javascrip:void(0) permet de ne pas avoir un rechargement de page, et &.. c'est x pour fermerla page web -->
+                <li><a href="#">Mon Profil</a></li>                    
+                <li><a href="tableau_de_bord.html">Creer un tableau de bord</a></li>
+                <li><a href="tableau_de_bord.html">Mes tableaux de bord</a></li>
+                <li><a href="#">equipes</a></li>
+            </ul>
+        </nav>
+
+        <form class="f" method="POST">
+            <table border="1" id="tab">
+                <tr id="tr1">
+                    <th> Equipe </th>
+                    <th> Membres </th>
+                    <th> Description </th>
+                    <th> Taches </th>
+                    <th> Etat </th>
+                </tr>
+                <tr id="tr2">
+                    <td>
+                        <label for="equipe"></label>
+                        <input type=text name="Equipe">
+                    </td>
+                    <td>
+                        <label for="membres"></label>
+                        <input type=text name=Membres>
+                    </td>
+                    <td>
+                        <label for="description"></label>
+                        <input class="d" type=text name=Descritption>
+                    </td>
+                    <td>
+                        <label for="taches"></label>
+                        <input class="t" type=text name=Taches>
+                    </td>
+                    <td>
+                        <label for="etat"></label>
+                        <input type=text name=Etat>
+                    </td>
+                </tr> 
+            </table>
+        </form>
+        <button  onclick="nv_ligne()">Creer nouvelle ligne</button>
+        <button onclick="supp_ligne()">Supprimer la ligne</button>
+        <button onclick="sv()">Sauvegarder le tableau</button>
+        <script>
+            function sv(){
+                alert("Le tableau a étè sauvegardé !")
+            }
+            function ouvrir(){
+                document.getElementById("nav").style.left="0px";
+            }
+            function fermer(){
+                document.getElementById("nav").style.left = "-290px";
+            }
+            function supp_ligne(){
+                let tab=document.getElementById("tab");
+                let ligne_supp=document.getElementById("tr2");
+                let cpt=tab.rows.length;
+                tab.deleteRow(cpt-1);
+            }
+            function nv_ligne(){
+                let tab=document.getElementById("tab");
+                let ligne=document.createElement('tr');
+                let supp=document.createElement('td');
+                supp.innerHTML='<button onclick="supp_ligne()">supprimer la ligne</button>'
+                let contenu_equipe= document.createElement('td');
+                contenu_equipe.innerHTML='<input type=text name="Equipe">';
+                let contenu_membres= document.createElement('td');
+                contenu_membres.innerHTML='<input type=text name=Membres>';
+                let contenu_etat= document.createElement('td');
+                contenu_etat.innerHTML='<input type=text name=Etat>';
+                let contenu_taches= document.createElement('td');
+                contenu_taches.innerHTML='<input type=text name=Taches>';
+                let contenu_description= document.createElement('td');
+                contenu_description.innerHTML='<input type=text name=Descritption>';
+                ligne.appendChild(contenu_description);
+                ligne.appendChild(contenu_equipe);
+                ligne.appendChild(contenu_etat);
+                ligne.appendChild(contenu_membres);
+                ligne.appendChild(contenu_taches);
+                ligne.appendChild(supp)
+                tab.appendChild(ligne);
+            }
+        </script>
     </body>
 </html>

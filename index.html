@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset utf-8>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
         <title> Gestion de projet </title>
     </head>
     <body>
-        <title> Gestion de projet </title>
+        <a onclick="ouvrir()" class="ouv">&#9776;menu</a>
+        <nav id="nav">
+            <ul>
+                <li><a href="javascript:void(0)" onclick="fermer()" class="fermer">&times;</a></li> <!--javascrip:void(0) permet de ne pas avoir un rechargement de page, et &.. c'est x pour fermerla page web -->
+                <li><a href="Creer_nv_projet.html">Accueil</a></li>
+                <li><a href="Mon_Profil.html">Mon Profil</a></li>
+                <li><a href="tableau_de_bord.html">Creer un tableau de bord</a></li>
+                <li><a href="tableau_de_bord.html">Mes tableaux de bord</a></li>
+                <li><a href="#">equipes</a></li>
+           </ul>
+        </nav>
         <h2> Bienvenue sur le site de gestion de projet </h2>
-        <h3> Veuillez vous identifier ci-dessous</h3>
-        <a href=formulaire_inscription.html>
-            <button type="button">Creer un compte</button>
-        </a>
-        <a href=formulaire_connexion.html>
-            <button type="button"> Se connecter</button>
-        </a>
-
+        <div class="cadre">
+            <h3> Veuillez vous identifier ci-dessous</h3>
+            <a class="ins" href="formulaire_inscription.html">
+                <button id="bt1" type="button">Creer un compte</button>
+            </a>
+            <a class="co" href="formulaire_connexion.html">
+                <button id="bt2" type="button"> Se connecter</button>
+            </a>
+        </div>
+        <script>
+            function ouvrir(){
+                document.getElementById("nav").style.left = "0px";
+            }
+            function fermer(){
+                document.getElementById("nav").style.left = "-280px";
+            }
+        </script>
     </body>
 </html>
