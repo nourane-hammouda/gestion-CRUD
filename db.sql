@@ -1,5 +1,5 @@
-CREATE DATABASE Projet_Manager;
-USE Projet_Manager;
+CREATE DATABASE Project_Manager;
+USE Project_Manager;
 
 CREATE TABLE authentication (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
