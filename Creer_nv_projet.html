@@ -53,11 +53,47 @@
             </table>
         </form>
         <button  onclick="nv_ligne()">Creer nouvelle ligne</button>
+        <button oncick="send_bd()"> Afficher mes tableaux</button>
         <button onclick="supp_ligne()">Supprimer la ligne</button>
         <button onclick="sv()">Sauvegarder le tableau</button>
         <script>
+            function sv
+            function send_bd(){
+                let tab=document.createElement('table');
+                let tr3=document.createElement('tr');
+                let tr4=dpcument.createElement('tr');
+                tr3=innerHTML('<td><label for="equipe"></label><input type=text name="Equipe"></td><td><label for="membres"></label><input type=text name=Membres></td><td><label for="description"></label><input class="d" type=text name=Descritption></td><td><label for="taches"></label><input class="t" type=text name=Tach></td><td><label for="etat"></label><input type=text name=Etat></td>'
+                const obj=XMLHTTPrequest;
+                obj.open("GET",url_serveur);
+                obj.send();
+                obj.responseType("sql");
+                obj.onload= ()=>{
+                    if(obj.readyState=4 && obj.status=200){
+                        const data=obj.response;
+                        tr4=innerHTML('<td>data</td>');
+                    }
+                    else{
+                        cosole.log("erreur");
+                    }
+                };
+                table.appenchild(tr3);
+                table.appenchild(tr4);
+            }
+                        
             function sv(){
-                alert("Le tableau a étè sauvegardé !")
+                objet=new XMLHTTPrequest();
+                new.open("POST", url_serveur);
+                obj.setRequestHeader(text - type du contenu,);
+                const body= JSON.stringfy/sql{...};
+                obj.onload=()=>{
+                    if(obj.readyState==4 && obj.status==200){
+                        alert("Le tableau a étè sauvegardé !");
+                    }
+                    else{
+                        console.log("erreur");
+                    }
+                };
+                obj.send(body);
             }
             function ouvrir(){
                 document.getElementById("nav").style.left="0px";
